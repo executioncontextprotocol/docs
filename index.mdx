@@ -1,97 +1,71 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Execution Context Protocol"
+description: "The runtime specification for agentic systems"
 ---
 
-## Setting up
+ECP (Execution Context Protocol) is an open standard for defining, packaging, versioning, and deploying **execution environments for AI agents** — portable specifications that describe what an agent can see, what tools it can access, and how it runs.
 
-Get your documentation site up and running in minutes.
+ECP is designed to **embrace and extend** the [Model Context Protocol (MCP)](https://modelcontextprotocol.io) — not replace it.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+- **MCP** standardizes how models call tools.
+- **ECP** standardizes how agents, tools, context, and policies execute together.
 
-## Make it yours
+Think of ECP as:
 
-Design a docs site that looks great and empowers your users.
+- **Docker Compose for MCP tools** — bundle servers, mounts, and policies in one manifest
+- **Infrastructure-as-code for agent execution** — declarative, versioned, shareable
+- **The missing layer** between tool calling (MCP) and multi-agent systems
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+## What can ECP enable?
+
+- **Shareable execution environments** — define once, run anywhere (CLI, platform, or custom runtime).
+- **Verticalized contexts** — e.g. Shopify Ops Context, RevOps Context, with the right tools and guardrails.
+- **Safe, inspectable execution** — default-deny tool access, budgets, write controls, and full audit traces.
+- **Portable agent specs** — version and distribute Context manifests like container images.
+
+## Why does ECP matter?
+
+Depending on where you sit in the ecosystem, ECP can have different benefits.
+
+- **Developers**: Define execution environments declaratively; no custom orchestration glue for every deployment.
+- **Platforms and runtimes**: Implement once against the spec; support any ECP Context.
+- **End users**: More capable, governed AI agents that run in reproducible, auditable environments.
+
+## Relationship to MCP
+
+ECP builds directly on MCP. MCP standardizes tool discovery and invocation; ECP does not redefine tool calling. Instead, ECP:
+
+- References MCP servers and tool names
+- Uses structured argument schemas
+- Bundles permissions and policies
+- Adds versioning and packaging semantics
+
+If MCP is the "USB interface" for AI tools, ECP is the "container manifest" that defines the whole execution environment.
+
+## Start building
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/getting-started/quickstart">
+    Run your first Context in minutes
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="Concepts" icon="book" href="/learn/concepts">
+    Context, executors, orchestration, and mounts
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Schema reference" icon="file-code" href="/reference/schema">
+    JSON Schema and type definitions
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="CLI reference" icon="terminal" href="/reference/cli">
+    ecp run and ecp validate
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Learn more
 
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
+<CardGroup cols={2}>
+  <Card title="Relationship to MCP" icon="puzzle-piece" href="/learn/relationship-to-mcp">
+    How ECP sits above MCP
   </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
+  <Card title="Security" icon="shield" href="/learn/security">
+    Default-deny, budgets, and audit
   </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+</CardGroup>

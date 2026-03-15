@@ -5,3 +5,8 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+node_modules
+dist
+*.log
+typedoc.json
