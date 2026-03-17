@@ -30,6 +30,14 @@
             ]
           },
           {
+            "group": "Alternatives",
+            "pages": [
+              "alternatives/index",
+              "alternatives/ecp-vs-langchain",
+              "alternatives/ecp-vs-openclaw"
+            ]
+          },
+          {
             "group": "Reference",
             "pages": [
               "reference/schema",

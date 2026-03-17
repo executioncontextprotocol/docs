@@ -1,0 +1,35 @@
+---
+description: Documentation voice + SEO guidelines (ECP)
+globs: **/*.{md,mdx}
+alwaysApply: false
+---
+
+# Documentation voice and SEO (ECP)
+
+## Voice
+
+- **Technically friendly, light**: precise terms, low-jargon sentences, minimal hype.
+- **Forward-moving**: prefer “what this is / why it matters / how to use it next.”
+- **Helpful, not spammy**: avoid buzzword piles, “ultimate guide” phrasing, and repetitive keyword loops.
+- **Clarity over cleverness**: simple headings, short paragraphs, concrete examples.
+- **Active voice + second person**: “you can…” / “run…” / “define…”.
+- **No emojis**: avoid emojis in headings, body text, tables, and UI callouts.
+
+## Terminology and naming
+
+- **First mention on a page**: write **“ECP (Execution Control Protocol)”**.
+- **After that**: alternate naturally between **ECP**, **Execution Control Protocol**, and **the protocol** when context is clear.
+- **Avoid**: repeating “Execution Control Protocol” in every paragraph; it should read like normal technical writing.
+
+## SEO that still reads well
+
+- **Intent-first intro**: first 2–3 sentences should answer what the page is for and who it helps.
+- **Headings**: sentence case; use clear, specific H2s that match real queries (no clickbait).
+- **Internal links**: add 2–5 relevant links to deeper docs (concepts, security, MCP relationship, spec/CLI) where helpful.
+- **Comparisons**: state what ECP is and isn’t; use crisp “X is for…, ECP is for…” framing.
+
+## Content checks before publishing
+
+- Title + description include **ECP** and **Execution Control Protocol** at least once (naturally).
+- H1 is unique and matches the title’s intent.
+- A “Next steps” or “Related reading” section exists when appropriate.

@@ -1,0 +1,65 @@
+---
+title: "ECP vs OpenClaw: Execution Control Protocol compared"
+description: "A technical comparison of ECP (Execution Control Protocol) and OpenClaw, focused on execution boundaries, policy enforcement, and operational risk."
+---
+
+# ECP (Execution Control Protocol) vs OpenClaw
+
+Agent frameworks like OpenClaw make it easier to build systems that **plan and act**: long-running agents, tool use, and autonomous execution.
+
+**ECP (Execution Control Protocol)** focuses on something slightly less exciting, but usually more important in production: **what is allowed to execute, under what constraints, and how that is enforced**.
+
+## What OpenClaw does well
+
+OpenClaw (and similar agent frameworks) are strong when you need:
+
+- **Persistent agents** that can keep state and operate over time
+- **Tooling and environment access** to get work done
+- **Dynamic planning** based on intermediate results
+
+## Where execution risk concentrates
+
+Once an agent can take actions, errors stop being “wrong answers” and start being “real consequences.”
+
+### Side effects are the hard boundary
+
+Common failure modes for execution-heavy agents include:
+
+- Calling APIs with the right schema but the wrong intent
+- Making repeated or escalating tool calls
+- Writing to files or systems in ways you didn’t anticipate
+
+### Guardrails can be bypassable
+
+If enforcement depends on prompts or agent behavior, it can drift over time (or be manipulated). Production systems typically need guardrails that are **consistent and non-bypassable**.
+
+## What ECP adds
+
+ECP (Execution Control Protocol) treats execution as a first-class boundary by defining:
+
+- **Explicit, structured action requests**
+- **Centralized policy enforcement** (default-deny, allowlists, budgets)
+- **Write controls** and approval requirements
+- **Auditable execution** (traces you can review after the fact)
+
+ECP doesn’t try to replace an agent framework. It gives you a control layer you can put *around* the parts that actually touch the world.
+
+## Typical architecture with both
+
+- **OpenClaw**: planning, reasoning, task decomposition, agent runtime behavior
+- **ECP**: execution environment definition, constraints, policy enforcement, audit trail
+
+## When to reach for ECP
+
+ECP is especially useful when:
+
+- You need **consistent policies** across many tools and services.
+- You want to limit blast radius with budgets and explicit permissions.
+- You’re operating with sensitive data or regulated workflows.
+- You want a clean separation: “decide what to do” vs “decide what is allowed.”
+
+## Next steps
+
+- Read [Core concepts](/learn/concepts) for Contexts, mounts, and policies.
+- See how ECP complements tool calling in [Relationship to MCP](/learn/relationship-to-mcp).
+- For guardrail design, go to [Security](/learn/security).
