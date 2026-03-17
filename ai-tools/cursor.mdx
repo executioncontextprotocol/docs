@@ -4,7 +4,7 @@ description: "Configure Cursor for your documentation workflow"
 icon: "arrow-pointer"
 ---
 
-Set up Cursor to help you write and maintain your Mintlify documentation.
+Set up Cursor to help you write and maintain your ECP (Execution Control Protocol) documentation.
 
 ## Prerequisites
 
@@ -17,15 +17,15 @@ Set up Cursor to help you write and maintain your Mintlify documentation.
   Open the root of your documentation repository where `docs.json` is located.
 </Step>
 
-<Step title="Install the Mintlify skill">
-  In the integrated terminal, run:
+<Step title="Install the ECP docs skill">
+  Install the skill from the live ECP docs site:
 
   ```bash
-  npx skills add https://mintlify.com/docs
+  npm install -g skills
+  skills add https://executioncontrolprotocol.io
   ```
 
-  This gives Cursor Mintlify's component reference, writing standards,
-  and workflow guidance.
+  This installs the ECP-specific docs guidance (terminology, page map, and writing rules) into your agent.
 </Step>
 
 <Step title="Customize project instructions">

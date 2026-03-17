@@ -1,8 +1,6 @@
-> **Customize this file**: Tailor this template to your project by noting specific contribution types you're looking for, adding a Code of Conduct, or adjusting the writing guidelines to match your style.
-
 # Contribute to the documentation
 
-Thank you for your interest in contributing to our documentation! This guide will help you get started.
+Thanks for helping improve the ECP (Execution Control Protocol) docs. This guide explains how to make changes safely and keep writing consistent.
 
 ## How to contribute
 
@@ -17,18 +15,32 @@ Thank you for your interest in contributing to our documentation! This guide wil
 1. Fork and clone this repository
 2. Install the Mintlify CLI: `npm i -g mint`
 3. Create a branch for your changes
-4. Make changes
-5. Navigate to the docs directory and run `mint dev`
-6. Preview your changes at `http://localhost:3000`
-7. Commit your changes and submit a pull request
+4. Run the docs site locally:
+
+   ```bash
+   mint dev
+   ```
+
+5. Preview at `http://localhost:3000`
+6. Commit your changes and submit a pull request
 
 For more details on local development, see our [development guide](development.mdx).
 
 ## Writing guidelines
 
-- **Use active voice**: "Run the command" not "The command should be run"
-- **Address the reader directly**: Use "you" instead of "the user"
-- **Keep sentences concise**: Aim for one idea per sentence
-- **Lead with the goal**: Start instructions with what the user wants to accomplish
-- **Use consistent terminology**: Don't alternate between synonyms for the same concept
-- **Include examples**: Show, don't just tell
+- **Follow project voice and SEO rules**: see `AGENTS.md` and `.cursor/rules/docs-voice-seo.mdc`
+- **No emojis**: do not use emoji characters in docs
+- **Prefer installed CLIs**: avoid one-off runners; show install/link steps first, then commands
+- **Use active voice**: “Run the command” not “The command should be run”
+- **Address the reader directly**: use “you”
+- **Keep sentences concise**: one idea per sentence when possible
+- **Lead with intent**: start sections with what the reader will accomplish
+- **Use consistent terminology**: first mention as “ECP (Execution Control Protocol)”, then vary naturally
+
+## Before you open a PR
+
+From the repo root:
+
+```bash
+mint broken-links
+```
