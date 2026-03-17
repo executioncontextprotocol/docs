@@ -28,6 +28,7 @@ alwaysApply: false
 - **Internal links**: add 2–5 relevant links to deeper docs (concepts, security, MCP relationship, spec/CLI) where helpful.
 - **Comparisons**: state what ECP is and isn’t; use crisp “X is for…, ECP is for…” framing.
 - **Commands**: prefer installed CLIs over one-off runners in docs. Show the one-time install/link step, then the command.
+- **Public-only docs**: do not publish internal documentation about building or operating the docs site (Mintlify, `mint dev`, `docs.json`, contribution workflow). Pages should focus on installing, configuring, and running ECP.
 
 ## Content checks before publishing
 

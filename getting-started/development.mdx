@@ -1,54 +1,25 @@
 ---
 title: "Development"
-description: "Preview docs locally and install the ECP CLI"
+description: "Install the CLI, configure providers, and run ECP locally"
 ---
 
-## Preview the docs locally
+This page focuses on developing and running ECP locally. It does not cover how this documentation site is built.
 
-**Prerequisites:** Node.js 19+ (or 18+; Mintlify may recommend 19+), and a docs directory with `docs.json`.
+## Prerequisites
 
-From the repo root:
+- **Node.js** 18+ (LTS recommended)
+- **npm** (v7+ for workspaces) or pnpm
+- For **OpenAI**: set `OPENAI_API_KEY`
+- For **Ollama**: [install Ollama](https://ollama.com/) and run it locally
 
-```bash
-npm i -g mint
-cd packages/docs
-mint dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the documentation. The preview updates as you edit MDX files.
-
-To use a different port:
+## Install the ECP CLI from the repo
 
 ```bash
-mint dev --port 3333
+npm install -g tsx
+cd packages/cli
+npm link
+cd ../..
 ```
-
-## Install the ECP CLI globally (optional)
-
-To get a global `ecp` command:
-
-1. Install **tsx** globally (the CLI runs TypeScript):
-
-   ```bash
-   npm install -g tsx
-   ```
-
-2. From the repo root, link the CLI:
-
-   ```bash
-   cd packages/cli
-   npm link
-   cd ../..
-   ```
-
-3. Run from any directory:
-
-   ```bash
-   ecp run path/to/context.yaml --enable openai -i topic="Hello"
-   ecp validate path/to/context.yaml
-   ```
-
-Alternatively, add a script to the root `package.json` and use `npm run ecp -- run ...`.
 
 ## Environment and config
 
@@ -58,8 +29,11 @@ Alternatively, add a script to the root `package.json` and use `npm run ecp -- r
 
 See [SETUP.md](https://github.com/executioncontrolprotocol/executioncontrolprotocol/blob/main/SETUP.md) for full details.
 
-## Troubleshooting
+## Run examples
 
-- **Docs preview not running:** Ensure you are in `packages/docs` (where `docs.json` lives) and run `mint update` if the CLI is outdated.
-- **404 on a page:** Confirm the page path in `docs.json` matches the file under `packages/docs` (e.g. `index` -> `index.mdx`, `getting-started/quickstart` -> `getting-started/quickstart.mdx`).
-- **Broken links:** Run `mint broken-links` from `packages/docs` to validate links.
+From the repo root:
+
+```bash
+ecp run examples/single-executor/context.yaml --enable openai -i topic="ECP"
+ecp validate examples/single-executor/context.yaml -i topic=test
+```

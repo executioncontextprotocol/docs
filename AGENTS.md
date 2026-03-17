@@ -1,17 +1,11 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill (prefer installed CLIs over one-off runners):
-> `npm install -g skills && skills add https://mintlify.com/docs`
+> Docs should contain public information only: installing, configuring, and running ECP.
 
 # Documentation project instructions
 
 ## About this project
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Run `mint dev` to preview locally
-- Run `mint broken-links` to check links
+- Pages are MDX files with YAML frontmatter.
+- Content is public-facing and focuses on installing, configuring, and running ECP.
 
 ## Terminology
 

@@ -1,43 +1,38 @@
 ---
-title: "Claude Code setup"
-description: "Configure Claude Code for your documentation workflow"
+title: "Use Claude Code with ECP"
+description: "Configure Claude Code and the ECP docs skill to speed up Execution Control Protocol development."
 icon: "asterisk"
 ---
 
-Set up Claude Code to help you write and maintain your ECP (Execution Control Protocol) documentation.
+Use Claude Code as an assistant when you work on ECP (Execution Control Protocol): manifests, examples, and CLI flows.
 
 ## Prerequisites
 
-- Active Claude subscription (Pro, Max, or API access)
+- Claude Code installed
+- Local clone of the ECP repo
 
 ## Setup
 
-<Steps>
-<Step title="Install Claude Code">
-  ```bash
-  npm install -g @anthropic-ai/claude-code
-  ```
-</Step>
+1. Install Claude Code:
 
-<Step title="Install the ECP docs skill">
-  Install the skill from the live ECP docs site:
+```bash
+npm install -g @anthropic-ai/claude-code
+```
 
-  ```bash
-  npm install -g skills
-  skills add https://executioncontrolprotocol.io
-  ```
+2. Install the ECP documentation skill so Claude Code understands the ECP docs:
 
-  This installs the ECP-specific docs guidance (terminology, page map, and writing rules) into your agent.
-</Step>
+```bash
+npm install -g skills
+skills add https://executioncontrolprotocol.io
+```
 
-<Step title="Customize project instructions">
-  Edit `AGENTS.md` in your project root to add project-specific terminology,
-  style preferences, and content boundaries.
-</Step>
+3. Use Claude Code in the ECP repo to:
 
-<Step title="Start writing with Claude Code">
-  ```bash
-  claude
-  ```
-</Step>
-</Steps>
+- Understand and edit Context manifests.
+- Design and refine new examples that use `ecp run` and `ecp validate`.
+- Explore how policies, mounts, and executors are modeled in the spec.
+
+## Next steps
+
+- [Concepts](/learn/concepts) — Contexts, orchestrators, and executors
+- [Schema reference](/reference/schema) — JSON Schema and TypeScript types
