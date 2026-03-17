@@ -21,23 +21,32 @@ npm install
 
 ## Step 2: Run a Context
 
-Using the single-executor example with OpenAI:
+Install the CLI from the repository (one-time). This gives you the `ecp` command:
 
 ```bash
-npx tsx packages/cli/src/index.ts run examples/single-executor/context.yaml --enable openai -i topic="ECP"
+npm install -g tsx
+cd packages/cli
+npm link
+cd ../..
+```
+
+Then run the single-executor example with OpenAI:
+
+```bash
+ecp run examples/single-executor/context.yaml --enable openai -i topic="ECP"
 ```
 
 Or validate a Context without running it:
 
 ```bash
-npx tsx packages/cli/src/index.ts validate examples/single-executor/context.yaml -i topic=test
+ecp validate examples/single-executor/context.yaml -i topic=test
 ```
 
 For **Ollama** (no API key):
 
 ```bash
 ollama pull llama3.2:3b
-npx tsx packages/cli/src/index.ts run examples/single-executor/context.yaml --provider ollama --enable ollama --model llama3.2:3b -i topic="Test"
+ecp run examples/single-executor/context.yaml --provider ollama --enable ollama --model llama3.2:3b -i topic="Test"
 ```
 
 ## Step 3: Inspect the manifest

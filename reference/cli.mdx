@@ -3,19 +3,13 @@ title: "CLI reference"
 description: "ecp run and ecp validate"
 ---
 
-The ECP CLI runs and validates Context manifests. Run it via **tsx** from the repo or install the CLI globally.
+The ECP CLI runs and validates Context manifests. Prefer installing the CLI once (via `npm link`) so you can use the `ecp` command from your shell.
 
 ## Commands
 
 ### run
 
 Execute a Context manifest:
-
-```bash
-npx tsx packages/cli/src/index.ts run <context.yaml> [options]
-```
-
-With global CLI:
 
 ```bash
 ecp run <context.yaml> [options]
@@ -40,13 +34,13 @@ ecp run <context.yaml> [options]
 **Example (OpenAI):**
 
 ```bash
-npx tsx packages/cli/src/index.ts run examples/single-executor/context.yaml --enable openai -i topic="ECP"
+ecp run examples/single-executor/context.yaml --enable openai -i topic="ECP"
 ```
 
 **Example (Ollama):**
 
 ```bash
-npx tsx packages/cli/src/index.ts run examples/single-executor/context.yaml --provider ollama --enable ollama --model llama3.2:3b -i topic="Test"
+ecp run examples/single-executor/context.yaml --provider ollama --enable ollama --model llama3.2:3b -i topic="Test"
 ```
 
 ### validate
@@ -54,7 +48,6 @@ npx tsx packages/cli/src/index.ts run examples/single-executor/context.yaml --pr
 Validate a Context manifest without running it:
 
 ```bash
-npx tsx packages/cli/src/index.ts validate <context.yaml> [options]
 ecp validate <context.yaml> [options]
 ```
 
@@ -65,7 +58,7 @@ ecp validate <context.yaml> [options]
 **Example:**
 
 ```bash
-npx tsx packages/cli/src/index.ts validate spec.yaml -i shopifyStoreId=demo -i jiraProject=DEMO
+ecp validate spec.yaml -i shopifyStoreId=demo -i jiraProject=DEMO
 ```
 
 ## Environment
