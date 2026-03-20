@@ -28,6 +28,8 @@ npm install
 npm run build
 ```
 
+`npm run build` runs a full clean of package `dist/` outputs first, then compiles (see the repo root `package.json`).
+
 Then either use the workspace binary:
 
 ```bash
@@ -46,7 +48,7 @@ cd packages/cli && npm link && cd ../..
 
 - **OpenAI:** Set `OPENAI_API_KEY`.
 - **Ollama:** Default base URL is `http://localhost:11434`; override with `--ollama-base-url` or `OLLAMA_BASE_URL`.
-- **System config:** Optional `ecp.config.yaml` (e.g. from `config/ecp.config.example.yaml`) for allow-listed extensions and security. The CLI loads it from `--config`, `./ecp.config.yaml`, or `~/.ecp/config.yaml`.
+- **System config:** Optional `ecp.config.yaml` (e.g. from `config/ecp.config.example.yaml`) for allow-listed **plugins**, **loggers**, and security. The CLI loads it from `--config`, `./ecp.config.yaml`, or `~/.ecp/config.yaml`.
 
 See [SETUP.md](https://github.com/executioncontrolprotocol/executioncontrolprotocol/blob/main/SETUP.md) for full details.
 

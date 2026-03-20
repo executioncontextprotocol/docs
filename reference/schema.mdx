@@ -11,9 +11,10 @@ The canonical schema for an ECP Context is generated from the TypeScript types a
 
 **`packages/spec/dist/ecp-context.schema.json`**
 
-Generate it from the repo root:
+Generate it from the repo root (after a build):
 
 ```bash
+npm run build
 npm run generate:schema
 ```
 
@@ -23,7 +24,7 @@ Then validate a manifest (e.g. `spec.yaml`) with the spec package validator:
 npm run validate
 ```
 
-The schema covers the root `ECPContext` and all nested types: `metadata`, `inputs`, `outputs`, `schemas`, `triggers`, `orchestration`, `orchestrator`, `executors`, `extensions`, and policy/mount/schema definition shapes.
+The schema covers the root `ECPContext` and all nested types: `metadata`, `inputs`, `outputs`, `schemas`, `triggers`, `orchestration`, `orchestrator`, `executors`, `plugins`, and policy/mount/schema definition shapes.
 
 ## TypeScript types
 
@@ -38,7 +39,7 @@ All types are exported from `@executioncontrolprotocol/spec` (or `packages/spec/
 - **SchemaDefinition**, **SchemaProperty** — JSON Schema-aligned definitions
 - **Trigger**, **Orchestration**, **Orchestrator**, **Executor** — Execution model
 - **Mount**, **ToolAccessPolicy**, **BudgetsPolicy**, **WriteControlsPolicy** — Per-executor configuration
-- **Extensions**, **ProviderDeclaration** — Extension registration
+- **Plugins**, **PluginReference** — Declared plugins (`provider`, `executor`, `logger`, `memory`, …)
 
 Naming follows OpenAPI conventions: **camelCase** for field names, **kebab-case** for enum/union literals (e.g. `"controller-specialist"`, `"propose-only"`), **PascalCase** for types and schema names.
 
@@ -77,6 +78,14 @@ schemas:
     properties:
       headline: { type: string }
       body: { type: string }
+plugins:
+  version: 1.0.0
+  providers:
+    - name: openai
+      kind: provider
+      type: builtin
+      version: 0.3.0
+  security: {}
 orchestration:
   entrypoint: summarizer
   strategy: single

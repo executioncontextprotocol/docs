@@ -40,10 +40,10 @@ You can inspect saved traces locally with `ecp trace` (and `ecp trace list`), op
 
 This supports compliance, debugging, and replay. Contexts are versioned and signed (roadmap) to avoid overly permissive configs being distributed by mistake.
 
-## Extensions and system config
+## Plugins and system config
 
-- **Extensions** — Contexts declare which model providers and plugins they use; versions are pinned.
-- **System config** — Optional `ecp.config.yaml` (or `--config`) can allow-list which extensions can be enabled and set organization-wide security policy.
+- **Context `plugins` block** — Declares which model providers, executors, and auxiliary plugins (loggers, memory, …) the Context may use; versions are pinned per `PluginReference`.
+- **System config** — Optional `ecp.config.yaml` (or `--config`) can allow-list which **plugin IDs** may be enabled (`plugins.allowEnable`, `plugins.defaultEnable`, `plugins.security`) and configure **loggers** (`loggers`), tool servers, and model policy.
 
 See [SETUP.md](https://github.com/executioncontrolprotocol/executioncontrolprotocol/blob/main/SETUP.md) for `allowEnable`, `defaultEnable`, and security options in the example config.
 
