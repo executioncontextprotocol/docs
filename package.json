@@ -7,9 +7,12 @@
   "scripts": {
     "dev": "mintlify dev",
     "build:typedoc": "typedoc",
-    "broken-links": "mintlify broken-links"
+    "broken-links": "mintlify broken-links",
+    "validate": "mintlify validate && mintlify broken-links",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "mintlify": "^4.0.0",
     "typedoc": "^0.28.0",
     "typescript": "^5.7.0"

@@ -38,7 +38,7 @@ ecp run <context.yaml> [options]
 | ------ | ----------- |
 | `--enable <name>` | Enable a plugin by ID (e.g. model providers `openai`, `ollama`). Repeat for multiple. |
 | `-i`, `--input` | Set input `key=value`. Repeat for each input (e.g. `-i topic=test`). |
-| `--provider <openai|ollama>` | Optional model provider. If omitted, it is inferred from the Context. |
+| `--provider` | Optional model provider: `openai` or `ollama`. If omitted, it is inferred from the Context. |
 | `--model` | Override model name (e.g. for Ollama: `llama3.2:3b`). |
 | `--config` | Path to system config file (e.g. `ecp.config.yaml`). |
 | `--ollama-base-url` | Ollama API base URL (default `http://localhost:11434`). |

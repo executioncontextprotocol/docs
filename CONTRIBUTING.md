@@ -22,9 +22,10 @@ Thanks for helping improve the ECP (Execution Control Protocol) docs. This guide
    ```
 
 5. Preview at `http://localhost:3000`
-6. Commit your changes and submit a pull request
+6. Run `npm install` once, then `npm run validate` before opening a PR (matches CI and the Husky pre-commit hook)
+7. Commit your changes and submit a pull request
 
-For more details on local development, see our [development guide](development.mdx).
+For more details on local development, see our [development guide](development.mdx). To ensure Mintlify does not deploy broken docs, see [`.github/README.md`](.github/README.md).
 
 ## Writing guidelines
 

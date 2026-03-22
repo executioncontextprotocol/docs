@@ -1,25 +1,19 @@
-# Validate Mintlify docs on push to main. Publishing is done by Mintlify when
-# this repo is connected in the Mintlify dashboard and the Mintlify GitHub App
-# is installed (https://dashboard.mintlify.com/settings/deployment/git-settings).
-# Pushes to main then trigger automatic deploys on Mintlify's hosting.
+# Validate Mintlify docs on every change to main (and on PRs). Same as `npm run validate`
+# locally / Husky (structural `mintlify validate` + `mintlify broken-links`).
+#
+# The Mintlify GitHub App may still deploy on push unless you enable **Blocking** CI checks
+# in the Mintlify dashboard (Add-ons). See `.github/README.md`.
+#
+# Workflow runs on all pushes/PRs to `main` (no path filters) so a single required status
+# check name is always present for branch protection.
 
 name: Docs
 
 on:
   push:
     branches: [main]
-    paths:
-      - "docs.json"
-      - "package.json"
-      - "**/*.mdx"
-      - "**/*.md"
   pull_request:
     branches: [main]
-    paths:
-      - "docs.json"
-      - "package.json"
-      - "**/*.mdx"
-      - "**/*.md"
   workflow_dispatch:
 
 permissions:
@@ -43,8 +37,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Validate Mintlify docs
-        run: npx mintlify validate
-
-      - name: Check broken links
-        run: npx mintlify broken-links
+      - name: Validate Mintlify docs (same as pre-commit)
+        run: npm run validate
